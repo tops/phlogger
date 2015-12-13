@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<title>Phlogger</title>
+</head>
+<body>
+
+<p>{{message}}</p>
+
+{% if newpost %}
+	{% include "newpost.html" %}	
+{% endif %}
+
+
+{% if posts %}
+	{% for post in posts %}
+		{% include "post.html" %}	
+	{% endfor %}
+{% endif %}
+
+{% if post %}
+	{% include "post.html" %}
+{% endif %}
+
+
+
+{% include "Admin/login.html" %}
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<h1><a href='?/Posts/single/{{post.id}}'>{{post.title}}</a></h1>
+<p>{{post.text}}</p>
+
+{% if comments %}
+	{% for comment in comments %}
+		{% include "comment.html" %}
+	{% endfor %}
+
+	<form action='?/Comments/create' method='post'>
+	<input type='text' name='name'><br>
+	<input type='text' name='text'><br>
+	<input type='hidden' name='post_id' value='{{post.id}}'>
+	<input type='submit' value='Skicka kommentar'>
+	</form>
+
+{% endif %}
