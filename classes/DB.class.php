@@ -10,11 +10,7 @@
 
 class DB{
 
-	private static $instance;
-
-	private function __construct(){}
-	private function __clone(){}
-	
+	private static $instance;	
 
 	public static function getInstance(){
 		if(!self::$instance){ # Om vi redan har något i $instance i klassen (self::)
@@ -26,4 +22,7 @@ class DB{
 			return self::$instance;
 		}
 	}
+
+	private function __construct(){}
+	private function __clone(){}
 }
