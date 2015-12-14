@@ -12,9 +12,6 @@ class DB{
 
 	private static $instance;
 
-	private function __construct(){}
-	private function __clone(){}
-
 	public static function getInstance(){
 		if(!self::$instance){ # Om vi redan har något i $instance i klassen (self::)
 			# Skapa då ett mysqli-objekt med en kopplaing till vår databas och lagra den i $instance
@@ -25,4 +22,7 @@ class DB{
 			return self::$instance;
 		}
 	}
+
+	private function __construct(){}
+	private function __clone(){}
 }
